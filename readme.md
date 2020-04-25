@@ -2,7 +2,7 @@
 
 Download the master.zip file...
 
-https://github.com/paulnagle/NA-Ireland-Ionic-4/archive/master.zip
+https://github.com/pjaudiomv/NA-Carolina-App-Ionic-4/archive/master.zip
 
 Unzip the zip file and cd into the directory that is created
 
