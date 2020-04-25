@@ -1,0 +1,24 @@
+<ion-app>
+  <ion-split-pane>
+    <ion-menu type="overlay">
+      <ion-header>
+        <ion-toolbar class="menu-toolbar">
+          <ion-title>{{'MENU' | translate }}</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="menu-css">
+        <ion-list>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item class="ion-menu-item" [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon class="ion-menu-icon" slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{p.title | translate }}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
