@@ -1,6 +1,6 @@
 <ion-app>
-  <ion-split-pane>
-    <ion-menu type="overlay">
+  <ion-split-pane contentId="main">
+    <ion-menu type="overlay" contentId="main">
       <ion-header>
         <ion-toolbar class="menu-toolbar">
           <ion-title>{{'MENU' | translate }}</ion-title>
@@ -19,6 +19,6 @@
         </ion-list>
       </ion-content>
     </ion-menu>
-    <ion-router-outlet main></ion-router-outlet>
+    <ion-router-outlet id="main"></ion-router-outlet>
   </ion-split-pane>
 </ion-app>

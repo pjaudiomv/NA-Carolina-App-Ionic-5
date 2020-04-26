@@ -52,7 +52,7 @@ export class AppComponent {
     {
       title: 'CONTACT',
       url: '/contact',
-      icon: 'contact'
+      icon: 'person-circle'
     },
     {
       title: 'SETTINGS',

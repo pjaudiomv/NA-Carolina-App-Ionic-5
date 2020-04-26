@@ -9,39 +9,39 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'settings',
-    loadChildren: './settings/settings.module#SettingsPageModule'
+    loadChildren: () => import('./settings/settings.module').then(m => m.SettingsPageModule)
   },
   {
     path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
+    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
   },
   {
     path: 'jft',
-    loadChildren: './jft/jft.module#JftPageModule'
+    loadChildren: () => import('./jft/jft.module').then(m => m.JftPageModule)
   },
   {
     path: 'datetime',
-    loadChildren: './datetime/datetime.module#DatetimePageModule'
+    loadChildren: () => import('./datetime/datetime.module').then(m => m.DatetimePageModule)
   },
   {
     path: 'contact',
-    loadChildren: './contact/contact.module#ContactPageModule'
+    loadChildren: () => import('./contact/contact.module').then(m => m.ContactPageModule)
   },
   {
     path: 'map',
-    loadChildren: './map/map.module#MapPageModule'
+    loadChildren: () => import('./map/map.module').then(m => m.MapPageModule)
   },
   {
     path: 'speakers',
-    loadChildren: './speakers/speakers.module#SpeakersPageModule'
+    loadChildren: () => import('./speakers/speakers.module').then(m => m.SpeakersPageModule)
   },
   {
     path: 'events',
-    loadChildren: './events/events.module#EventsPageModule'
+    loadChildren: () => import('./events/events.module').then(m => m.EventsPageModule)
   }
 ];
 
