@@ -16,9 +16,6 @@
 <!--      <ion-card-subtitle>{{ 'HOME_TITLE' | translate}}</ion-card-subtitle>-->
       <ion-card-title class="ion-card-subtitle" [innerHTML]="post.summary"></ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <div [innerHTML]="post.description"></div>
-    </ion-card-content>
     <ion-row>
       <ion-col class="ion-text-right">
         <ion-button color="primary" (click)="openLink(post.url)">

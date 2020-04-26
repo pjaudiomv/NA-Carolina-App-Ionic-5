@@ -42,7 +42,7 @@ export class ListPage implements OnInit {
         }
       });
 
-    this.HTMLGrouping = 'city';
+    this.HTMLGrouping = 'area';
     this.loadingCtrl.present('Loading meetings...');
     this.meetingsListAreaGrouping = 'service_body_bigint';
     this.meetingsListCountyGrouping = 'location_sub_province';
