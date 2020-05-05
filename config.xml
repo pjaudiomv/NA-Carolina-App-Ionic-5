@@ -19,7 +19,7 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
-    <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="AIzaSyDnk9e_5DQKBOtsIkaTOYYk0ccNrogWyvc" />
+    <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="AIzaSyBat66jV9HuFCwXYlpG1yedj5LNKKsgiy0" />
     <preference name="GOOGLE_MAPS_IOS_API_KEY" value="AIzaSyCAXA0a5OvYotRAQb4d77hx60OnFFqChKE" />
     <platform name="android">
         <allow-intent href="market:*" />

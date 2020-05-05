@@ -6,8 +6,8 @@ then
 
      rm -rf www
 # 
-     ionic cordova platform rm ios
-#     ionic cordova platform rm android
+#     ionic cordova platform rm ios
+     ionic cordova platform rm android
 # #    ionic cordova platform rm browser
 # 
      ionic cordova plugin rm cordova-plugin-inappbrowser
@@ -23,8 +23,8 @@ then
 
      rm -rf platform/*
 
-    ionic cordova platform add ios@latest
-#     ionic cordova platform add android@latest
+#    ionic cordova platform add ios@latest
+     ionic cordova platform add android@latest
 #    ionic cordova platform add browser@latest
     ionic cordova plugin add cordova-plugin-ionic-webview@latest
     ionic cordova plugin add cordova-plugin-inappbrowser
@@ -39,8 +39,8 @@ then
     ionic cordova plugin add onesignal-cordova-plugin
 fi
 
-ionic cordova prepare ios --prod
-# ionic cordova prepare android --prod
+# ionic cordova prepare ios --prod
+ ionic cordova prepare android --prod
 #ionic cordova prepare browser --prod
 
 #ionic cordova resources ios
