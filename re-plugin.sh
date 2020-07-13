@@ -5,11 +5,15 @@ if [[ -z "$1" ]]
 then
 
      rm -rf www
-# 
-#     ionic cordova platform rm ios
+     ionic cordova platform rm ios
      ionic cordova platform rm android
-# #    ionic cordova platform rm browser
-# 
+#     ionic cordova platform rm browser
+
+    # add plugin to enable AndroidX in the project
+    ionic cordova plugin rm cordova-plugin-androidx
+    # add plugin to patch existing plugin source that uses the Android Support Library to use AndroidX
+    ionic cordova plugin rm cordova-plugin-androidx-adapter
+
      ionic cordova plugin rm cordova-plugin-inappbrowser
      ionic cordova plugin rm cordova-plugin-splashscreen
      ionic cordova plugin rm cordova-plugin-statusbar
@@ -23,9 +27,15 @@ then
 
      rm -rf platform/*
 
-#    ionic cordova platform add ios@latest
+    ionic cordova platform add ios@latest
      ionic cordova platform add android@latest
 #    ionic cordova platform add browser@latest
+
+    # add plugin to enable AndroidX in the project
+    ionic cordova plugin add cordova-plugin-androidx
+    # add plugin to patch existing plugin source that uses the Android Support Library to use AndroidX
+    ionic cordova plugin add cordova-plugin-androidx-adapter
+
     ionic cordova plugin add cordova-plugin-ionic-webview@latest
     ionic cordova plugin add cordova-plugin-inappbrowser
     ionic cordova plugin add cordova-plugin-splashscreen
@@ -39,7 +49,7 @@ then
     ionic cordova plugin add onesignal-cordova-plugin
 fi
 
-# ionic cordova prepare ios --prod
+ ionic cordova prepare ios --prod
  ionic cordova prepare android --prod
 #ionic cordova prepare browser --prod
 
