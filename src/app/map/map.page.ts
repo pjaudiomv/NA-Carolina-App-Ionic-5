@@ -38,6 +38,7 @@ import {
 import { ModalOptions } from '@ionic/core';
 import { MapmodalPage } from '../mapmodal/mapmodal.page';
 import { Base64 } from '@ionic-native/base64/ngx';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 declare const google: any;
 
@@ -109,7 +110,8 @@ export class MapPage implements OnInit {
     private translate: TranslateService,
     private zone: NgZone,
     public modalCtrl: ModalController,
-    private base64: Base64
+    private base64: Base64,
+    private iab: InAppBrowser
   ) {
     console.log('Map page constructor');
 
@@ -566,7 +568,7 @@ export class MapPage implements OnInit {
 
   dismissLoader() {
     if (this.loader) {
-      //console.log('Dismissing loader..');
+      // console.log('Dismissing loader..');
       this.loader = this.loadingCtrl.dismiss();
       this.loader = null;
     }
@@ -617,8 +619,17 @@ export class MapPage implements OnInit {
     return await modal.present();
   }
 
-  public openMapsLink(destLatitude: string, destLongitude: string) {
-    window.open('https://www.google.com/maps/search/?api=1&query=' + destLatitude + '%2C' + destLongitude + ')', '_system');
+  public openTelLink(url: string) {
+    const telUrl = 'tel:' + url;
+    const browser = this.iab.create(telUrl);
+  }
+
+  public openMapsLink(destLatitude, destLongitude) {
+    const browser = this.iab.create('https://www.google.com/maps/search/?api=1&query=' + destLatitude + ',' + destLongitude);
+  }
+
+  public openLink(url) {
+    const browser = this.iab.create(url);
   }
 
 }

@@ -3,7 +3,7 @@ import { ModalController, NavParams } from '@ionic/angular';
 import { MeetingListProviderService } from '../service/meeting-list-provider.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
-
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-mapmodal',
@@ -23,8 +23,9 @@ export class MapmodalPage implements OnInit {
     private storage: Storage,
     private MeetingListProvider: MeetingListProviderService,
     private navParams: NavParams,
-    private modalController: ModalController) {
-    //console.log('mapModal constructor');
+    private modalController: ModalController,
+    private iab: InAppBrowser) {
+    // console.log('mapModal constructor');
     this.storage.get('timeDisplay')
       .then(timeDisplay => {
         if (timeDisplay) {
@@ -43,17 +44,17 @@ export class MapmodalPage implements OnInit {
     await this.modalController.dismiss();
   }
 
-  public openMapsLink(destLatitude: string, destLongitude: string) {
-    window.open('https://www.google.com/maps/search/?api=1&query=' + destLatitude + ',' + destLongitude + ')', '_system');
-  }
-
   public openTelLink(url: string) {
     const telUrl = 'tel:' + url;
-    window.open(telUrl, '_system');
+    const browser = this.iab.create(telUrl);
   }
 
-  public openLink(url: string) {
-    window.open(url, '_system');
+  public openMapsLink(destLatitude, destLongitude) {
+    const browser = this.iab.create('https://www.google.com/maps/search/?api=1&query=' + destLatitude + ',' + destLongitude);
+  }
+
+  public openLink(url) {
+    const browser = this.iab.create(url);
   }
 
   transformField(value: string) {

@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { IonicModule } from '@ionic/angular';
 import { MapmodalPage } from '../mapmodal/mapmodal.page';
 import { MapPage } from './map.page';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 const routes: Routes = [
   {
@@ -31,7 +32,8 @@ const routes: Routes = [
     MapmodalPage
   ],
   providers: [
-    Base64
+    Base64,
+    InAppBrowser
   ]
 })
 export class MapPageModule { }

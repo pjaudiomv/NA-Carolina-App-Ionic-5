@@ -4,6 +4,7 @@ import { ServiceGroupsProviderService } from '../service/service-groups-provider
 import { LoadingService } from '../service/loading.service';
 import { firstBy } from 'thenby';
 import { Storage } from '@ionic/storage';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-list',
@@ -29,7 +30,8 @@ export class ListPage implements OnInit {
     private MeetingListProvider: MeetingListProviderService,
     private ServiceGroupsProvider: ServiceGroupsProviderService,
     private storage: Storage,
-    public loadingCtrl: LoadingService) {
+    public loadingCtrl: LoadingService,
+    private iab: InAppBrowser) {
   }
 
   ngOnInit() {
@@ -50,17 +52,17 @@ export class ListPage implements OnInit {
     this.getServiceGroupNames();
   }
 
-  public openMapsLink(destLatitude, destLongitude) {
-    window.open('https://www.google.com/maps/search/?api=1&query=' + destLatitude + ',' + destLongitude, '_system');
-  }
-
   public openTelLink(url: string) {
     const telUrl = 'tel:' + url;
-    window.open(telUrl, '_system');
+    const browser = this.iab.create(telUrl);
   }
 
-  public openLink(url: string) {
-    window.open(url, '_system');
+  public openMapsLink(destLatitude, destLongitude) {
+    const browser = this.iab.create('https://www.google.com/maps/search/?api=1&query=' + destLatitude + ',' + destLongitude);
+  }
+
+  public openLink(url) {
+    const browser = this.iab.create(url);
   }
 
   transformField(value: string) {

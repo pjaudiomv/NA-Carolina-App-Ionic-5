@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ListPage } from './list.page';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppPipesModule } from '../pipes/pipes.module';
-
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @NgModule({
   imports: [
@@ -23,6 +23,9 @@ import { AppPipesModule } from '../pipes/pipes.module';
     AppPipesModule
   ],
   declarations: [ListPage],
+  providers: [
+    InAppBrowser
+  ],
   exports: []
 })
 export class ListPageModule { }

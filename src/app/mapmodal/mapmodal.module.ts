@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicModule } from '@ionic/angular';
 import { MapmodalPage } from './mapmodal.page';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 const routes: Routes = [
   {
@@ -23,6 +24,9 @@ const routes: Routes = [
   ],
   entryComponents: [
     MapmodalPage
-  ]
+  ],
+  providers: [
+    InAppBrowser
+  ],
 })
 export class MapmodalPageModule { }
